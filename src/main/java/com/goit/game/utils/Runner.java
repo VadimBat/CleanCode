@@ -1,6 +1,6 @@
 package com.goit.game.utils;
 
-import static com.goit.game.data.BoxData.box;
+import static com.goit.game.data.BoxData.BOX;
 
 /*
 * Class Runner implements the main loop of the game using method startGame()
@@ -18,7 +18,7 @@ public class Runner {
             Util.printBox();
             if(!boxEmpty){
                 for(int i = 0; i < 9; i++)
-                    box[i] = ' ';
+                    BOX[i] = ' ';
                 boxEmpty = true;
             }
             Util.printWinner(winner);
@@ -31,7 +31,7 @@ public class Runner {
                 continue;
             }
             for(int i=0; i<9; i++){
-                if(box[i] != 'X' && box[i] != 'O'){
+                if(BOX[i] != 'X' && BOX[i] != 'O'){
                     boxAvailable = true;
                     break;
                 }

@@ -2,7 +2,7 @@ package com.goit.game.utils;
 
 import java.util.Scanner;
 
-import static com.goit.game.data.BoxData.box;
+import static com.goit.game.data.BoxData.BOX;
 
 /*
 *Class with game util methods
@@ -15,11 +15,11 @@ public class Util {
 
 // Util Class print start box for game
     public static void printBox() {
-        System.out.println("\n\n " + box[0] + " | " + box[1] + " | " + box[2] + " ");
+        System.out.println("\n\n " + BOX[0] + " | " + BOX[1] + " | " + BOX[2] + " ");
         System.out.println("-----------");
-        System.out.println(" " + box[3] + " | " + box[4] + " | " + box[5] + " ");
+        System.out.println(" " + BOX[3] + " | " + BOX[4] + " | " + BOX[5] + " ");
         System.out.println("-----------");
-        System.out.println(" " + box[6] + " | " + box[7] + " | " + box[8] + " \n");
+        System.out.println(" " + BOX[6] + " | " + BOX[7] + " | " + BOX[8] + " \n");
     }
 
 // Util Class print result of user game
@@ -36,10 +36,10 @@ public class Util {
         while (true) {
             byte input = scan.nextByte();
             if (input > 0 && input < 10) {
-                if (box[input - 1] == 'X' || box[input - 1] == 'O')
+                if (BOX[input - 1] == 'X' || BOX[input - 1] == 'O')
                     System.out.println("That one is already in use. Enter another.");
                 else {
-                    box[input - 1] = 'X';
+                    BOX[input - 1] = 'X';
                     break;
                 }
             } else
@@ -51,8 +51,8 @@ public class Util {
     public static void getRandom() {
         while (true) {
             byte rand = (byte) (Math.random() * (9 - 1 + 1) + 1);
-            if (box[rand - 1] != 'X' && box[rand - 1] != 'O') {
-                box[rand - 1] = 'O';
+            if (BOX[rand - 1] != 'X' && BOX[rand - 1] != 'O') {
+                BOX[rand - 1] = 'O';
                 break;
             }
         }
@@ -60,15 +60,15 @@ public class Util {
 
 // Util class check winner by X
     public static boolean isWinnerConditionOne() {
-        return (box[0] == 'X' && box[1] == 'X' && box[2] == 'X') || (box[3] == 'X' && box[4] == 'X' && box[5] == 'X') || (box[6] == 'X' && box[7] == 'X' && box[8] == 'X') ||
-               (box[0] == 'X' && box[3] == 'X' && box[6] == 'X') || (box[1] == 'X' && box[4] == 'X' && box[7] == 'X') || (box[2] == 'X' && box[5] == 'X' && box[8] == 'X') ||
-               (box[0] == 'X' && box[4] == 'X' && box[8] == 'X') || (box[2] == 'X' && box[4] == 'X' && box[6] == 'X');
+        return (BOX[0] == 'X' && BOX[1] == 'X' && BOX[2] == 'X') || (BOX[3] == 'X' && BOX[4] == 'X' && BOX[5] == 'X') || (BOX[6] == 'X' && BOX[7] == 'X' && BOX[8] == 'X') ||
+               (BOX[0] == 'X' && BOX[3] == 'X' && BOX[6] == 'X') || (BOX[1] == 'X' && BOX[4] == 'X' && BOX[7] == 'X') || (BOX[2] == 'X' && BOX[5] == 'X' && BOX[8] == 'X') ||
+               (BOX[0] == 'X' && BOX[4] == 'X' && BOX[8] == 'X') || (BOX[2] == 'X' && BOX[4] == 'X' && BOX[6] == 'X');
     }
 
 // Util class check winner by 0
     public static boolean isWinnerConditionTwo() {
-        return ((box[0] == 'O' && box[1] == 'O' && box[2] == 'O') || (box[3] == 'O' && box[4] == 'O' && box[5] == 'O') || (box[6] == 'O' && box[7] == 'O' && box[8] == 'O') ||
-                (box[0] == 'O' && box[3] == 'O' && box[6] == 'O') || (box[1] == 'O' && box[4] == 'O' && box[7] == 'O') || (box[2] == 'O' && box[5] == 'O' && box[8] == 'O') ||
-                (box[0] == 'O' && box[4] == 'O' && box[8] == 'O') || (box[2] == 'O' && box[4] == 'O' && box[6] == 'O'));
+        return ((BOX[0] == 'O' && BOX[1] == 'O' && BOX[2] == 'O') || (BOX[3] == 'O' && BOX[4] == 'O' && BOX[5] == 'O') || (BOX[6] == 'O' && BOX[7] == 'O' && BOX[8] == 'O') ||
+                (BOX[0] == 'O' && BOX[3] == 'O' && BOX[6] == 'O') || (BOX[1] == 'O' && BOX[4] == 'O' && BOX[7] == 'O') || (BOX[2] == 'O' && BOX[5] == 'O' && BOX[8] == 'O') ||
+                (BOX[0] == 'O' && BOX[4] == 'O' && BOX[8] == 'O') || (BOX[2] == 'O' && BOX[4] == 'O' && BOX[6] == 'O'));
     }
 }
