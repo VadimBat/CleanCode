@@ -36,7 +36,7 @@ public class Runner {
                     break;
                 }
             }
-            if(boxAvailable == false){
+            if(!boxAvailable){
                 winner = 3;
                 continue;
             }
