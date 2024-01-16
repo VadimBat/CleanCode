@@ -1,5 +1,9 @@
 package com.goit.game.data;
 
+
+/*
+* Class with constant box for game
+*/
 public class BoxData {
     private BoxData() {
     }
