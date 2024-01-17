@@ -11,7 +11,6 @@ import static com.goit.game.data.BoxData.BOX;
 public class Util {
     private Util(){
     }
-    private static final Scanner scan = new Scanner(System.in);
 
 // Util Class print start box for game
     public static void printBox() {
@@ -32,7 +31,7 @@ public class Util {
     }
 
 // Util Class check move of user
-    public static void checkInput() {
+    public static void checkInput(Scanner scan) {
         while (true) {
             byte input = scan.nextByte();
             if (input > 0 && input < 10) {

@@ -1,5 +1,7 @@
 package com.goit.game.utils;
 
+import java.util.Scanner;
+
 import static com.goit.game.data.BoxData.BOX;
 
 /*
@@ -15,6 +17,7 @@ public class Runner {
 
 // Main loop as game engine
     public static void startGame(){
+        Scanner scan = new Scanner(System.in);
         System.out.println("Enter box number to select. Enjoy!\n");
         while (true) {
             Util.printBox();
@@ -23,7 +26,7 @@ public class Runner {
             if (winner >= 1 && winner <= 3 ){
                 break;
             }
-            Util.checkInput();
+            Util.checkInput(scan);
             if(Util.isWinnerConditionOne()){
                 winner = 1;
                 continue;
@@ -38,6 +41,7 @@ public class Runner {
                 winner = 2;
             }
         }
+        scan.close();
     }
 
 // Make box empty
